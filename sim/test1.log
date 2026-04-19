@@ -1,0 +1,394 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -c -do " log -r /* ;coverage save -onexit mem_cov1;run -all; exit" -wlf wave_file1.wlf -l test1.log -sv_seed random work.top "+UVM_TESTNAME=tx_write_rx_read_test" "+UVM_REPORT_DISABLE_FILE_LINE" 
+# Start time: 15:43:17 on Dec 22,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim
+# //  Version 2022.1 linux Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.txmt_if(fast)
+# Loading work.rcvr_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.uart_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.txmt_if(fast__2)
+# Loading work.rcvr_if(fast__2)
+# Loading work.uart_top(fast)
+# Loading work.baudGenerator(fast)
+# Loading work.uart_rcvr(fast)
+# Loading work.uart_rx(fast)
+# Loading work.fifo_buf(fast)
+# Loading work.uart_txmt(fast)
+# Loading work.uart_tx(fast)
+# Loading /home/cad/eda/Questa-sim/questasim/uvm-1.1d/linux/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 2600433126
+#  log -r /* 
+# coverage save -onexit mem_cov1
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test tx_write_rx_read_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               tx_write_rx_read_test       -     @479 
+#   envh                     uart_tb                     -     @495 
+#     rx_agth                rx_agent                    -     @514 
+#       drvh                 rx_driver                   -     @549 
+#         rsp_port           uvm_analysis_port           -     @564 
+#         seq_item_port      uvm_seq_item_pull_port      -     @556 
+#       monh                 rx_monitor                  -     @534 
+#         monitor_port       uvm_analysis_port           -     @541 
+#       seqrh                rx_sequencer                -     @572 
+#         rsp_export         uvm_analysis_export         -     @579 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @673 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     sb_h                   uart_sb                     -     @525 
+#       rx_fifo              uvm_tlm_analysis_fifo #(T)  -     @735 
+#         analysis_export    uvm_analysis_imp            -     @774 
+#         get_ap             uvm_analysis_port           -     @766 
+#         get_peek_export    uvm_get_peek_imp            -     @750 
+#         put_ap             uvm_analysis_port           -     @758 
+#         put_export         uvm_put_imp                 -     @742 
+#       tx_fifo              uvm_tlm_analysis_fifo #(T)  -     @688 
+#         analysis_export    uvm_analysis_imp            -     @727 
+#         get_ap             uvm_analysis_port           -     @719 
+#         get_peek_export    uvm_get_peek_imp            -     @703 
+#         put_ap             uvm_analysis_port           -     @711 
+#         put_export         uvm_put_imp                 -     @695 
+#     tx_agth                tx_agent                    -     @503 
+#       drvh                 tx_driver                   -     @799 
+#         rsp_port           uvm_analysis_port           -     @814 
+#         seq_item_port      uvm_seq_item_pull_port      -     @806 
+#       monh                 tx_monitor                  -     @784 
+#         monitor_port       uvm_analysis_port           -     @791 
+#       seqrh                tx_sequencer                -     @822 
+#         rsp_export         uvm_analysis_export         -     @829 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @923 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+# ------------------------------------------------------------------
+# 
+# @70000: In_tx_monitor wr_uart=1
+# @70000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @960                                         
+#   begin_time                   time      64    30000                                        
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'h69                                         
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @950 
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'h69 
+# -------------------------------------
+# @130000: In_tx_monitor wr_uart=1
+# @130000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1021                                        
+#   begin_time                   time      64    90000                                        
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'hb                                          
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1016
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'hb  
+# -------------------------------------
+# @190000: In_tx_monitor wr_uart=1
+# @190000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1029                                        
+#   begin_time                   time      64    150000                                       
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'h24                                         
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1025
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'h24 
+# -------------------------------------
+# @250000: In_tx_monitor wr_uart=1
+# @250000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1037                                        
+#   begin_time                   time      64    210000                                       
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'h5a                                         
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1033
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'h5a 
+# -------------------------------------
+# @310000: In_tx_monitor wr_uart=1
+# @310000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1045                                        
+#   begin_time                   time      64    270000                                       
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'ha8                                         
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1041
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'ha8 
+# -------------------------------------
+# @370000: In_tx_monitor wr_uart=1
+# @370000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1053                                        
+#   begin_time                   time      64    330000                                       
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'h75                                         
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1049
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'h75 
+# -------------------------------------
+# @430000: In_tx_monitor wr_uart=1
+# @430000: printing tx_xtn
+# --------------------------------------------------------------------------------------------
+# Name                           Type      Size  Value                                        
+# --------------------------------------------------------------------------------------------
+# req                            tx_xtn    -     @1061                                        
+#   begin_time                   time      64    390000                                       
+#   depth                        int       32    'd2                                          
+#   parent sequence (name)       string    13    tx_write_seqs                                
+#   parent sequence (full name)  string    45    uvm_test_top.envh.tx_agth.seqrh.tx_write_seqs
+#   sequencer                    string    31    uvm_test_top.envh.tx_agth.seqrh              
+#   reset                        integral  -1    'h0                                          
+#   tx_fifo_full                 integral  -1    'h0                                          
+#   wr_uart                      integral  -1    'h1                                          
+#   w_data                       integral  8     'h8                                          
+# --------------------------------------------------------------------------------------------
+# -------------------------------------
+# Name            Type      Size  Value
+# -------------------------------------
+# data_rcvd       tx_xtn    -     @1057
+#   reset         integral  -1    'h0  
+#   tx_fifo_full  integral  -1    'h0  
+#   wr_uart       integral  -1    'h0  
+#   w_data        integral  8     'h8  
+# -------------------------------------
+# @42650000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @956 
+#   r_data         integral  8     'h69 
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 42670000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 42670000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = 69, DATA_RECEIVED = 69
+# @87450000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1069
+#   r_data         integral  8     'hb  
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 87470000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 87470000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = b, DATA_RECEIVED = b
+# @132250000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1078
+#   r_data         integral  8     'h24 
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 132270000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 132270000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = 24, DATA_RECEIVED = 24
+# @177050000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1086
+#   r_data         integral  8     'h5a 
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 177070000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 177070000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = 5a, DATA_RECEIVED = 5a
+# @221850000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1094
+#   r_data         integral  8     'ha8 
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 221870000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 221870000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = a8, DATA_RECEIVED = a8
+# @266650000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1102
+#   r_data         integral  8     'h75 
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 266670000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 266670000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = 75, DATA_RECEIVED = 75
+# @311450000: In_rx_monitor rd_uart=1
+# --------------------------------------
+# Name             Type      Size  Value
+# --------------------------------------
+# data_rcvd        rx_xtn    -     @1110
+#   r_data         integral  8     'h8  
+#   rd_uart        integral  -1    'h0  
+#   rx_fifo_full   integral  -1    'h0  
+#   rx_fifo_empty  integral  -1    'h0  
+# --------------------------------------
+# UVM_INFO ../tb/uart_sb.sv(58) @ 311470000: uvm_test_top.envh.sb_h [SB] DATA COMPARISION SUCCESSFUL
+# UVM_INFO ../tb/uart_sb.sv(59) @ 311470000: uvm_test_top.envh.sb_h [SB] DATA_TRANSMITTED = 8, DATA_RECEIVED = 8
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 311470000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/uart_sb.sv(76) @ 311470000: uvm_test_top.envh.sb_h [REPORT] Number of Successful Comparisons      = 7
+# UVM_INFO ../tb/uart_sb.sv(77) @ 311470000: uvm_test_top.envh.sb_h [REPORT] Number of Unsuccessful Comparisons    = 0
+# UVM_INFO ../tx_agent_top/tx_driver.sv(65) @ 311470000: uvm_test_top.envh.tx_agth.drvh [REPORT] No of Transactions: 7
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   22
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [REPORT]     3
+# [RNTST]     1
+# [SB]    14
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /home/cad/eda/Questa-sim/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 311470 ns  Iteration: 63  Instance: /top
+# Saving coverage database on exit...
+# End time: 15:43:21 on Dec 22,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 2

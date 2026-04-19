@@ -1,0 +1,2 @@
+var g_data = {"23":{"pr":"/uart_test_pkg","ty":2,"dui":3,"dun":"work.uart_test_pkg","asserts":[{"n":["tx_write_sequence/body/#ublk#119652807#33/immed__36"],"h":[0,1]},{"n":["rx_read_sequence/body/#ublk#119652807#31/immed__34"],"h":[0,1]}],"ad":0}}
+processAssertionsData(g_data);
