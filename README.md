@@ -1,6 +1,6 @@
 # UART Core — RTL Design & UVM Verification
 
-**A complete, production-quality UART IP Core**  
+**A complete UART Core**  
 *Designed in Verilog/SystemVerilog · Verified with a full UVM testbench · Simulated on QuestaSim & VCS*
 
 ---
@@ -319,7 +319,7 @@ Idle line (held high)
     │                                              │
     └──────────────────────────────────────────────┘
 
-    ◄──── 1 ────►◄──────────── 8 data bits ────────►◄─ 1 ─►
+    ◄── 1 ──►◄───────────── 8 data bits ──────────►◄─ 1 ─►
        start bit        (LSB transmitted first)       stop bit
 
     Total frame = 10 bit periods
